@@ -1,6 +1,29 @@
+import java.util.Scanner;
 public class play {
-    system.out.println("Choose how you wish to play with your pet:");
-    system.out.println("1. Fetch - Throw a ball and have your pet retrieve it");
-    system.out.println("2. Hide and Seek - Hide and let your pet find you");
-    system.out.print("Enter your play choice (1-2): ");
+    public static void main(String[] args, EnergyBars bars) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Choose how you wish to play with your pet press 1-3:");
+            String choice = scanner.nextLine();
+            switch (choice) {
+                case "1" -> {
+                    System.out.println("You chose to play fetch.");
+                    bars.changePlay(10);
+                }
+                case "2" -> {
+                    System.out.println("You chose to play hide and seek.");
+                    bars.changePlay(15);
+                }
+                case "3" -> {
+                    System.out.println("You chose to play treasure hunt.");
+                    bars.changePlay(20);
+                }
+                default -> System.out.println("Invalid choice. Please choose 1, 2, or 3.");
+            }
+            switch (choice) {
+                case "1" -> System.out.println("You throw the ball and your pet runs to fetch it! \nThe pet brings the ball back to you.");
+                case "2" -> System.out.println("You hide and your pet is searching for you! \nYour pet found you and starts moving around happily.");
+                case "3" -> System.out.println("You play treasure hunt with your pet! \nYour pet finds the treasure and brings it back to you.");
+            }
+        }
+    }
 }

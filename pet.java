@@ -1,7 +1,10 @@
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 public class pet {
-    public static void runTutorial() {
+    public static Map<String, String> runTutorial() {
+        Map<String, String> petInfo = new HashMap<>();
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Tomagatchi Pet Game");
             System.out.println("Welcome to the Pet Selector!");
@@ -18,7 +21,7 @@ public class pet {
                 case 3 -> selectedPet = "Bird";
                 default -> {
                     System.out.println("Invalid choice. Please select 1, 2, or 3.");
-                    return;
+                    return petInfo;
                 }
             }
             System.out.println("You have chosen a " + selectedPet + " as your pet!");
@@ -50,14 +53,18 @@ public class pet {
             System.out.println(" ");
             System.out.println(" Welcome the the tutorial for taking care of your pet! ");
             System.out.println(" Here are some basic commands to take care of your pet: ");
-            System.out.println(" 1. feed() - Feed your pet to keep it healthy.");
-            System.out.println(" 2. play() - Play with your pet to keep it happy.");
-            System.out.println(" 3. sleep() - Let your pet rest to regain energy.");
-            System.out.println(" 4. status() - Check your pet's current status.");
-            System.out.println(" 5. give bath() - Clean your pet to keep it fresh.");
-            System.out.println(" 6. give medicine() - Heal your pet when it's sick.");
-            System.out.println(" 7. Quit() - Exit the game.");
+            System.out.println(" 1. feed - Feed your pet to keep it healthy.");
+            System.out.println(" 2. play - Play with your pet to keep it happy.");
+            System.out.println(" 3. sleep - Let your pet rest to regain energy.");
+            System.out.println(" 4. status - Check your pet's current status.");
+            System.out.println(" 5. quit - Exit the game.");
             System.out.println(" Have fun taking care of your pet!");
+            
+            // Store pet information
+            petInfo.put("name", petName);
+            petInfo.put("type", selectedPet);
+            petInfo.put("home", homeName);
         }
+        return petInfo;
     }
 }
