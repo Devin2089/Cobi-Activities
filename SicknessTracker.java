@@ -4,7 +4,7 @@ public class SicknessTracker {
     private boolean isSick;
     private Timer sicknessTimer;
     private static final int CHECK_INTERVAL = 3000; // Check every 3 seconds
-    private static final int SICKNESS_CHANCE = 500; // 1 in 500 chance
+    private static final int SICKNESS_CHANCE = 250; // 1 in 250 chance
 
     public SicknessTracker() {
         this.isSick = false;
