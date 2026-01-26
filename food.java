@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class food {
-    public static void showFoodOptions(EnergyBars bars) {
-        try (Scanner scanner = new Scanner(System.in)) {
+    public static void showFoodOptions(Scanner scanner, EnergyBars bars) {
             System.out.println("Food Options for Your Pet:");
             System.out.println("1. Kibble - Basic pet food for cats and dogs");
             System.out.println("2. Canned Food - More nutritious option");
@@ -24,6 +23,5 @@ public class food {
                 }
                 default -> System.out.println("Invalid choice. Please choose 1, 2, or 3.");
             }
-        }
     }
 }

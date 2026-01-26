@@ -22,14 +22,14 @@ public class EnergyBars {
             public void run() {
                 decreaseAllBars();
             }
-        }, 5000, 5000); // Decrease every 5 seconds
+        }, 10000, 10000); // Decrease every 10 seconds
     }
 
     private synchronized void decreaseAllBars() {
-        this.sleep = Math.max(0, this.sleep - 2);
-        this.food = Math.max(0, this.food - 3);
+        this.sleep = Math.max(0, this.sleep - 1);
+        this.food = Math.max(0, this.food - 1);
         this.play = Math.max(0, this.play - 1);
-        this.cleanliness = Math.max(0, this.cleanliness - 2);
+        this.cleanliness = Math.max(0, this.cleanliness - 1);
     }
 
     public void stopTimer() {
