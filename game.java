@@ -3,7 +3,7 @@ public class game {
         // Run the pet tutorial first and get pet info
         java.util.Map<String, String> petInfo = pet.runTutorial();
         
-        // Create energy bars, sickness tracker, and statistics
+        // After tutorial: Create all accessible modules
         EnergyBars bars = new EnergyBars();
         SicknessTracker sickness = new SicknessTracker();
         Statistics stats = new Statistics(
@@ -13,6 +13,7 @@ public class game {
             bars,
             sickness
         );
+        // All files are now accessible after tutorial: food, play, sleep, shower, stats, sickness
         
         // ...game logic can go here...
         System.out.println("Game is starting...");
